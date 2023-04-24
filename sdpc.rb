@@ -17,11 +17,11 @@ class Sdpc < Formula
       def install
         bin.install "sdpc-darwin-arm64"
         # Install bash completion
-        output = Utils.safe_popen_read("#{bin}/sdpc-darwin-arm64", "completion", "bash")
-        (bash_completion/"sdpc-darwin-arm64").write output
-        # Install zsh completion
-        output = Utils.safe_popen_read("#{bin}/sdpc-darwin-arm64", "completion", "zsh")
-        (zsh_completion/"_sdpc-darwin-arm64").write output
+        # output = Utils.safe_popen_read("#{bin}/sdpc-darwin-arm64", "completion", "bash")
+        # (bash_completion/"sdpc-darwin-arm64").write output
+        # # Install zsh completion
+        # output = Utils.safe_popen_read("#{bin}/sdpc-darwin-arm64", "completion", "zsh")
+        # (zsh_completion/"_sdpc-darwin-arm64").write output
       end
     end
     if Hardware::CPU.intel?
