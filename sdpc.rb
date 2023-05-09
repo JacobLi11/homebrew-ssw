@@ -40,6 +40,40 @@ class Sdpc < Formula
     end
   end
 
+  version "1.0.5"
+
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://s3.us-west-2.amazonaws.com/splashlock-assets.splashshield.ai/sdpc/stage/darwin/arm64/sdpc-darwin-arm64-0.1.33-stage-0.0.3.31.zip"
+      sha256 "fc2aac5d7eab01b7081f9a09195b3353423a5cbb04624123bd877fcb4ada7500"
+
+      def install
+        bin.install "sdpc-darwin-arm64"
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/sdpc-darwin-arm64", "-h")
+        (bash_completion/"sdpc-darwin-arm64").write output
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/sdpc-darwin-arm64", "-h")
+        (zsh_completion/"_sdpc-darwin-arm64").write output
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://s3.us-west-2.amazonaws.com/splashlock-assets.splashshield.ai/sdpc/stage/darwin/arm64/sdpc-darwin-arm64-0.1.33-stage-0.0.3.31.zip"
+      sha256 "fc2aac5d7eab01b7081f9a09195b3353423a5cbb04624123bd877fcb4ada7500"
+
+      def install
+        bin.install "sdpc-darwin-arm64"
+        # Install bash completion
+        output = Utils.safe_popen_read("#{bin}/acli", "completion", "bash")
+        (bash_completion/"sdpc-darwin-arm64").write output
+        # Install zsh completion
+        output = Utils.safe_popen_read("#{bin}/acli", "completion", "zsh")
+        (zsh_completion/"_sdpc-darwin-arm64").write output
+      end
+    end
+  end
+
+
   test do
     system "#{bin}/sdpc-darwin-arm64 -h"
   end
