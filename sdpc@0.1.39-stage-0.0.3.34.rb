@@ -42,7 +42,7 @@ class Sdpc0139stage00334 < Formula
   end
 
   test do
-    system "#{bin}/sdpc-darwin-arm64 -h \|\| #{bin}/sdpc-darwin-amd64 -h"
+    system "#{bin}/sdpc-darwin-arm64 -h || #{bin}/sdpc-darwin-amd64 -h"
   end
 end
 
