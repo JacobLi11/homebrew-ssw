@@ -12,8 +12,8 @@ class Sdpc < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url https://s3.us-west-2.amazonaws.com/splashlock-assets.splashshield.ai/sdpc/stage/linux/amd64/sdpc-linux-arm64-0.1.39-stage-0.0.3.34.zip
-      sha256 f8cfd366300fecac9c668d024422f795fe7c54216443a83aaf9e30f7125130c9
+      url https://s3.us-west-2.amazonaws.com/splashlock-assets.splashshield.ai/sdpc/stage/darwin/amd64/sdpc-darwin-arm64-0.1.39-stage-0.0.3.34.zip
+      sha256 5766962dc58220c5dfab378828aa1719aa70ddcd0a5d609b5fd91d61761663b3
 
       def install
         bin.install sdpc-darwin-arm64
@@ -26,8 +26,8 @@ class Sdpc < Formula
       end
     end
     if Hardware::CPU.intel?
-      url https://s3.us-west-2.amazonaws.com/splashlock-assets.splashshield.ai/sdpc/stage/linux/amd64/sdpc-linux-amd64-0.1.39-stage-0.0.3.34.zip
-      sha256 560225d17e8c560accba4cf92cdee0628906e9eabca6b938414a5df0abc6f6f8
+      url https://s3.us-west-2.amazonaws.com/splashlock-assets.splashshield.ai/sdpc/stage/darwin/amd64/sdpc-darwin-amd64-0.1.39-stage-0.0.3.34.zip
+      sha256 bc79edb45d26ef243bd263169c78b7a81894d4e3ba95de3cc93eca40941e1ff5
 
       def install
         bin.install sdpc-darwin-arm64
